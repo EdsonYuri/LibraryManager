@@ -8,9 +8,8 @@ module.exports = {
   theme: {
     colors: {
       // use colors only specified
-      white: colors.white,
-      gray: colors.gray,
-      blue: colors.blue,
+      zinc: colors.zinc,
+      black: colors.black,
     },
     extend: {},
   },
