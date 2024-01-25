@@ -1,4 +1,5 @@
 import { GiBlackBook } from "react-icons/gi";
+import SearchBook from "../components/forms/searchBook";
 
 import Menu from "../components/menu/menu"
 
@@ -8,7 +9,7 @@ export default function Books() {
             <Menu />
 
             <main className="m-5 mb-0 w-full">
-                <div className="flex justify-between mb-5">
+                <div className="flex justify-between">
                     <div className="flex items-end">
                         <GiBlackBook className="w-10 h-10" />
                         <h1 className="text-2xl font-semibold">Livros</h1>
@@ -16,12 +17,14 @@ export default function Books() {
                     <button className="border p-2 hover:bg-zinc-400 transition duration-200">Cadastrar livro</button>
                 </div>
 
-                <table className="border w-full">
+                <SearchBook/>
+
+                <table className="w-full">
                     <thead>
                         <tr>
                             <th>ISBN</th>
                             <th>Título</th>
-                            <th>Subtítulo</th>
+                            <th>Autor</th>
                             <th>Exemplares</th>
                             <th>Disponíveis</th>
                             <th>Categoria</th>
@@ -32,7 +35,7 @@ export default function Books() {
                         <tr>
                             <td>9788869183157</td>
                             <td>Harry Potter e a Pedra Filosofal</td>
-                            <td>Subtítulo</td>
+                            <td>J. K. Rowling</td>
                             <td>7</td>
                             <td>4</td>
                             <td>Fantasia</td>
@@ -41,7 +44,7 @@ export default function Books() {
                         <tr>
                             <td>9788845292613</td>
                             <td>Senhor dos anéis</td>
-                            <td> la ele</td>
+                            <td> J. R. R. Tolkien</td>
                             <td>2</td>
                             <td>1</td>
                             <td>Fantasia</td>
@@ -50,7 +53,7 @@ export default function Books() {
                         <tr>
                             <td>6500471571</td>
                             <td>O Diário de Hass</td>
-                            <td>Vol.1</td>
+                            <td>Heliel Ferraz Pessoa</td>
                             <td>6</td>
                             <td>5</td>
                             <td>Terror</td>

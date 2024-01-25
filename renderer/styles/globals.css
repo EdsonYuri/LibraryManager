@@ -4,13 +4,20 @@
 
 @layer base {
   body {
-    @apply bg-zinc-200 text-black;
-    box-sizing: border-box;
+    @apply bg-zinc-200 text-black box-border;
+  }
+
+  table, td, th{
+    @apply border-collapse p-2 text-center border;
+  }
+
+  input{
+    @apply border bg-zinc-200;
   }
 }
 
-@layer components {
+/*@layer components {
   table, td, th{
     @apply border-collapse p-2 text-center border
   }
-}
+}*/
