@@ -1,23 +1,32 @@
+import RegisterBookButton from "../buttons/registerBookButton"
+
 export default function RegisterBook() {
     return (
-        <form action="">
-            <fieldset className="relative flex flex-wrap flex-col gap-y-4">
-                <label htmlFor="title">Título</label>
-                <input type="text" id="title" placeholder="Título" />
+        <form action="" className="flex flex-col gap-5">
+            <fieldset className="relative flex flex-wrap flex-col gap-5">
+                <label htmlFor="title" className="w-full">Título:
+                    <input type="text" id="title" placeholder="Título" className="w-full float-left" />
+                </label>
 
-                <label htmlFor="author">Autor</label>
-                <input type="text" id="author" placeholder="Autor" />
+                <label htmlFor="author">Autor:
+                    <input type="text" id="author" placeholder="Autor" />
+                </label>
 
-                <label htmlFor="category">Categoria</label>
-                <input type="text" id="category" placeholder="Categoria" />
+                <label htmlFor="category">Categoria:
+                    <input type="text" id="category" placeholder="Categoria" />
+                </label>
 
-                <label htmlFor="year">Ano de lançamento</label>
-                <input type="number" id="year" className="w-28" placeholder="Lançamento" />
-                
-                <label htmlFor="copies">N° de exemplares</label>
-                <input type="number" id="copies" className="w-28" placeholder="Exemplares" />
+                <label htmlFor="year" >Ano de lançamento:
+                    <input type="number" id="year" className="w-28 ml-2" placeholder="Lançamento" />
+                </label>
+
+                <label htmlFor="copies">N° de exemplares:
+                    <input type="number" id="copies" className="w-28 ml-5" placeholder="Exemplares" />
+                </label>
             </fieldset>
 
+
+            <RegisterBookButton onClick={null} />
 
         </form>
     )
