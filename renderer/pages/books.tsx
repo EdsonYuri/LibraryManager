@@ -4,7 +4,7 @@ import { useState } from "react";
 
 import Menu from "../components/menu/menu"
 import Modal from "../components/modal/modal";
-import RegisterBook from "../components/forms/ registerbook";
+import RegisterBook from "../components/forms/registerbook";
 import RegisterBookButton from "../components/buttons/registerBookButton";
 
 
