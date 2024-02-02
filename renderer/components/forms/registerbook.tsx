@@ -2,7 +2,7 @@ import { useState } from "react"
 
 import RegisterBookButton from "../buttons/registerBookButton"
 
-export default function RegisterBook() {
+export default function RegisterBook({fetchBooks}) {
 
     if (!localStorage.getItem('id')) localStorage.setItem("id", '0')
 
@@ -15,12 +15,15 @@ export default function RegisterBook() {
     })
 
     const addBookValues = e => setBookData({ ...bookData, [e.target.id]: e.target.value })
+
     const registerbook = e => {
         e.preventDefault()
         let registerId = Number(localStorage.getItem('id'))
 
         localStorage.setItem(`book_${registerId}`, JSON.stringify(bookData))    
         localStorage.setItem("id", String(registerId + 1))
+
+        fetchBooks()
     }
 
     return (

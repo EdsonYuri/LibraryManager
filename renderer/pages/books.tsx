@@ -1,18 +1,42 @@
 import { GiBlackBook } from "react-icons/gi";
 import SearchBook from "../components/forms/searchBook";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import Menu from "../components/menu/menu"
 import Modal from "../components/modal/modal";
 import RegisterBook from "../components/forms/registerbook";
 import RegisterBookButton from "../components/buttons/registerBookButton";
+import Table from "../components/tables/table";
 
 
 export default function Books() {
+    // abertura do modal
     const [isOpen, setIsOpen] = useState(false)
 
     const handleOpen = () => setIsOpen(true)
     const handleClose = () => setIsOpen(false)
+
+    // recupera livros cadastrados
+
+    const [books, setBooks] = useState([])
+
+    const fetchBooks = () => {
+        if (localStorage.getItem("id")) {
+            let quantityBooks = Number(localStorage.getItem("id"))
+
+            for (let i = 0; i < quantityBooks; i++) {
+                setBooks(prevBooks => {
+                    const newBook = [...prevBooks]
+                    newBook[i] = JSON.parse(localStorage.getItem(`book_${i}`))
+                    return newBook
+                })
+            }
+        }
+    }
+
+    useEffect(() => {
+        fetchBooks()
+    }, [])
 
     return (
         <div className="flex">
@@ -23,7 +47,7 @@ export default function Books() {
                     <button onClick={handleClose}>X</button>
                 </div>
 
-                <RegisterBook />
+                <RegisterBook fetchBooks={fetchBooks}/>
             </Modal>
 
             <Menu />
@@ -39,47 +63,7 @@ export default function Books() {
 
                 <SearchBook />
 
-                <table className="w-full">
-                    <thead>
-                        <tr>
-                            <th>Título</th>
-                            <th>Autor</th>
-                            <th>Ano de lançamento</th>
-                            <th>Exemplares</th>
-                            <th>Disponíveis</th>
-                            <th>Categoria</th>
-                        </tr>
-                    </thead>
-
-                    <tbody>
-                        <tr>
-                            <td>Harry Potter e a Pedra Filosofal</td>
-                            <td>J. K. Rowling</td>
-                            <td>1997</td>
-                            <td>7</td>
-                            <td>4</td>
-                            <td>Fantasia</td>
-                        </tr>
-
-                        <tr>
-                            <td>Senhor dos anéis</td>
-                            <td> J. R. R. Tolkien</td>
-                            <td>1954</td>
-                            <td>2</td>
-                            <td>1</td>
-                            <td>Fantasia</td>
-                        </tr>
-
-                        <tr>
-                            <td>O Diário de Hass</td>
-                            <td>Heliel Ferraz Pessoa</td>
-                            <td>2008</td>
-                            <td>6</td>
-                            <td>5</td>
-                            <td>Terror</td>
-                        </tr>
-                    </tbody>
-                </table>
+                <Table books={books}/>
             </main>
 
         </div>
