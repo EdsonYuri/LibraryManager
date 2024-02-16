@@ -12,17 +12,17 @@ export default function Table({books}) {
         <table className="w-full">
             <thead>
                 <tr>
-                    <th>Título</th>
-                    <th>Autor</th>
-                    <th>Ano de lançamento</th>
-                    <th>Exemplares</th>
-                    <th>Disponíveis</th>
-                    <th>Categoria</th>
+                    <th className="w-1/4">Título</th>
+                    <th className="w-1/4">Autor</th>
+                    <th className="w-1/5">Ano de lançamento</th>
+                    <th className="w-1/12">Exemplares</th>
+                    <th className="w-1/12">Disponíveis</th>
+                    <th className="w-3/4">Categoria</th>
                 </tr>
             </thead>
 
             <tbody>
-                {listBooks.map((book, index) => (
+                {listBooks.map((book, index) => ( 
                     <tr key={index}>
                         <td>{book.title}</td>
                         <td>{book.author}</td>

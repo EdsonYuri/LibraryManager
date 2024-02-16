@@ -19,6 +19,8 @@ export default function Books() {
     // recupera livros cadastrados
 
     const [books, setBooks] = useState([])
+    const [booksSearched, setBooksSearched] = useState([])
+    const [booksShown, setbooksShown] = useState([])
 
     const fetchBooks = () => {
         if (localStorage.getItem("id")) {
@@ -37,6 +39,19 @@ export default function Books() {
     useEffect(() => {
         fetchBooks()
     }, [])
+    useEffect(() => {
+        if(booksSearched != null){
+            setbooksShown(booksSearched)
+        } else {
+            setbooksShown(books)
+        }
+    }, [books, booksSearched])
+
+    // filtra livros
+
+    const showsFilteredBooks = (e) => {
+        setBooksSearched(e)
+    }
 
     return (
         <div className="flex">
@@ -47,7 +62,7 @@ export default function Books() {
                     <button onClick={handleClose}>X</button>
                 </div>
 
-                <RegisterBook fetchBooks={fetchBooks}/>
+                <RegisterBook fetchBooks={fetchBooks} />
             </Modal>
 
             <Menu />
@@ -61,9 +76,9 @@ export default function Books() {
                     <RegisterBookButton onClick={handleOpen} />
                 </div>
 
-                <SearchBook />
+                <SearchBook books={books} recoverFilteredBooks={showsFilteredBooks} />
 
-                <Table books={books}/>
+                <Table books={booksShown} />
             </main>
 
         </div>
