@@ -54,10 +54,10 @@ export default function Books() {
     }
 
     return (
-        <div className="flex">
+        <div className="flex bg-zinc-100">
 
             <Modal isOpen={isOpen}>
-                <div className="flex justify-between mb-5">
+                <div className="flex justify-between mb-5 rounded-md">
                     <h1 className="text-xl font-semibold">Cadastrar livro</h1>
                     <button onClick={handleClose}>X</button>
                 </div>
@@ -69,9 +69,9 @@ export default function Books() {
 
             <main className="m-5 mb-0 w-full">
                 <div className="flex justify-between">
-                    <div className="flex items-end">
-                        <GiBlackBook className="w-10 h-10" />
-                        <h1 className="text-2xl font-semibold">Livros</h1>
+                    <div className="flex gap-2 items-center">
+                        <GiBlackBook className="text-[30px]" />
+                        <h1 className="text-2xl font-bold">Livros</h1>
                     </div>
                     <RegisterBookButton onClick={handleOpen} />
                 </div>

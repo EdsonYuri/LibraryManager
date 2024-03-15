@@ -20,6 +20,11 @@
   }
 }
 
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+}
+
 /*@layer components {
   table, td, th{
     @apply border-collapse p-2 text-center border
