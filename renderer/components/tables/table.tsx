@@ -9,7 +9,7 @@ export default function Table({books}) {
     }, [books])
 
     return (
-        <table className="w-full">
+        <table className="w-full ">
             <thead>
                 <tr>
                     <th className="w-1/4">Título</th>

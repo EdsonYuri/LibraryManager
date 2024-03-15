@@ -42,20 +42,20 @@ export default function SearchBook({ books, recoverFilteredBooks }) {
 
     return (
         <div className="my-10">
-            <h2>Pesquisar</h2>
+            <p className="mb-1 font-semibold ">Pesquisar</p>
             <form action="" className="flex flex-wrap gap-4">
-                <input type="text" name="title" placeholder="Título" onChange={addSearchData} />
-                <input type="text" name="author" placeholder="Autor" onChange={addSearchData} />
-                <input type="text" name="category" placeholder="Categorias" onChange={addSearchData} />
-                <input type="number" name="year" className="w-28" placeholder="Ano" onChange={addSearchData} />
-                <input type="number" name="copies" className="w-28" placeholder="Exemplares" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="text" name="title" placeholder="Título" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="text" name="author" placeholder="Autor" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="text" name="category" placeholder="Categorias" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="number" name="year"  placeholder="Ano" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="number" name="copies"  placeholder="Exemplares" onChange={addSearchData} />
 
-                <button className="flex justify-center p-1 w-11 border">
-                    <IoSearch />
+                <button className="text-[16px]">
+                    <IoSearch/>
                 </button>
 
-                <button className="flex justify-center p-1 w-11 border">
-                    <GrPowerReset />
+                <button className="text-[16px]">
+                    <GrPowerReset/>
                 </button>
             </form>
         </div>
