@@ -11,6 +11,10 @@
     @apply border-collapse p-2 text-center border;
   }
 
+  tr:hover{
+    @apply bg-zinc-200 cursor-pointer transition-all	;
+  }
+
   input{
     @apply border bg-zinc-200;
   }

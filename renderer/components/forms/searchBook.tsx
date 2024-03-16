@@ -47,15 +47,15 @@ export default function SearchBook({ books, recoverFilteredBooks }) {
                 <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="text" name="title" placeholder="Título" onChange={addSearchData} />
                 <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="text" name="author" placeholder="Autor" onChange={addSearchData} />
                 <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="text" name="category" placeholder="Categorias" onChange={addSearchData} />
-                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="number" name="year"  placeholder="Ano" onChange={addSearchData} />
-                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="number" name="copies"  placeholder="Exemplares" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="number" name="year" placeholder="Ano" onChange={addSearchData} />
+                <input className="bg-zinc-300 placeholder:text-zinc-800 border-none px-3 py-1 rounded-md shadow-md focus:outline-zinc-700" type="number" name="copies" placeholder="Exemplares" onChange={addSearchData} />
 
                 <button className="text-[16px]">
-                    <IoSearch/>
+                    <IoSearch />
                 </button>
 
                 <button className="text-[16px]">
-                    <GrPowerReset/>
+                    <GrPowerReset />
                 </button>
             </form>
         </div>

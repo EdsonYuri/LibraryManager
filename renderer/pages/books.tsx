@@ -10,11 +10,10 @@ import Table from "../components/tables/table";
 
 
 export default function Books() {
-    // abertura do modal
-    const [isOpen, setIsOpen] = useState(false)
-
-    const handleOpen = () => setIsOpen(true)
-    const handleClose = () => setIsOpen(false)
+    // abre e fecha modal
+    const [modalState, setModalState] = useState(false)
+    const toggleModal = () => setModalState(!modalState)
+    
 
     // recupera livros cadastrados
 
@@ -56,12 +55,7 @@ export default function Books() {
     return (
         <div className="flex bg-zinc-100">
 
-            <Modal isOpen={isOpen}>
-                <div className="flex justify-between mb-5 rounded-md">
-                    <h1 className="text-xl font-semibold">Cadastrar livro</h1>
-                    <button onClick={handleClose}>X</button>
-                </div>
-
+            <Modal modalState={modalState} toggleModal={toggleModal}>
                 <RegisterBook fetchBooks={fetchBooks} />
             </Modal>
 
@@ -73,7 +67,7 @@ export default function Books() {
                         <GiBlackBook className="text-[30px]" />
                         <h1 className="text-2xl font-bold">Livros</h1>
                     </div>
-                    <RegisterBookButton onClick={handleOpen} />
+                    <RegisterBookButton onClick={toggleModal} />
                 </div>
 
                 <SearchBook books={books} recoverFilteredBooks={showsFilteredBooks} />
